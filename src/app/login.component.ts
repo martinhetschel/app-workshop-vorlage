@@ -42,7 +42,7 @@ export class LoginComponent {
     this.error = '';
     try {
       await action();
-      await this.router.navigate(['/notes']);
+      await this.router.navigate(['/home']);
     } catch (e: any) {
       this.error = 'Das hat nicht geklappt: ' + (e?.code ?? e?.message ?? 'unbekannter Fehler');
     }

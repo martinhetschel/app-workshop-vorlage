@@ -11,10 +11,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 26 # aktuelle LTS-Version
+          cache: npm
       - run: npm ci
       - run: npm run build
       - name: Bei Google anmelden (WIF, ohne Schlüssel)
@@ -24,4 +25,4 @@ jobs:
           workload_identity_provider: projects/DEINE-PROJEKTNUMMER/locations/global/workloadIdentityPools/github-pool/providers/github-provider
           service_account: github-deployer@DEIN-PROJEKT.iam.gserviceaccount.com
       - name: Veröffentlichen
-        run: npx firebase-tools deploy --project=DEIN-PROJEKT --non-interactive --force --only=hosting,firestore:rules
+        run: npx firebase-tools@15 deploy --project=DEIN-PROJEKT --non-interactive --force --only=hosting,firestore:rules

@@ -1,15 +1,12 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /notes/{noteId} {
-      allow read, delete: if request.auth != null
-                          && resource.data.uid == request.auth.uid;
-      allow create: if request.auth != null
-                    && request.resource.data.uid == request.auth.uid;
-      // Ändern erlaubt, aber die uid darf dabei nicht umgeschrieben werden
-      allow update: if request.auth != null
-                    && resource.data.uid == request.auth.uid
-                    && request.resource.data.uid == resource.data.uid;
+    // Jede angemeldete Person hat ihren eigenen Bereich: users/<ihre-uid>/...
+    // Alles, was unter ihrer uid liegt, darf nur sie selbst lesen und schreiben.
+    // Neue Sammlungen für die eigene App kommen deshalb immer dorthin hinein,
+    // zum Beispiel users/<uid>/aufgaben. Dafür sind keine neuen Regeln nötig.
+    match /users/{uid}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
     }
     // Alles andere bleibt gesperrt
   }

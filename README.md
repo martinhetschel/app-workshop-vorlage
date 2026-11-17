@@ -1,6 +1,6 @@
 # Meine erste App
 
-Eine kleine Notizliste mit Anmeldung. Gebaut mit Angular, gespeichert in Firebase, automatisch veröffentlicht über GitHub und Firebase Hosting. Alles läuft im Browser, du musst nichts installieren.
+Ein Startpunkt mit Anmeldung für deine eigene App-Idee. Gebaut mit Angular, gespeichert in Firebase, automatisch veröffentlicht über GitHub und Firebase Hosting. Alles läuft im Browser, du musst nichts installieren.
 
 ## So funktioniert es
 
@@ -22,18 +22,18 @@ Die Firestore-Regeln aus `firestore.rules` werden bei jedem Deploy automatisch v
 
 ## Den Code ändern lassen
 
-Beschreibe der KI in einem Satz, was sich ändern soll, zum Beispiel: "Aus der Notizliste soll eine Einkaufsliste mit Mengenangabe werden." Immer nur eine Änderung auf einmal. Fehlermeldungen komplett kopieren und der KI zeigen. Jede Abfrage an die Datenbank muss weiterhin auf die uid des Nutzers filtern.
+Erzähle der KI deine Idee, zum Beispiel: "Ich möchte eine Einkaufsliste, in der ich Dinge mit Menge eintragen und abhaken kann." Die KI stellt dir ein paar Fragen und baut zuerst die kleinste Version. Danach geht es Schritt für Schritt weiter, immer nur eine Änderung auf einmal. Fehlermeldungen komplett kopieren und der KI zeigen.
 
 ## Regeln für die KI
 
 - Niemals `firebase login` oder `firebase deploy` ausführen. Veröffentlicht wird nur über GitHub Actions.
 - Keine Schlüssel, Passwörter oder Tokens in Dateien schreiben.
-- Die Datei `firestore.rules` nur ändern, wenn ich es ausdrücklich verlange.
+- Die Datei `firestore.rules` nur ändern, wenn es nötig ist, und vorher erklären, warum.
 
 ## Dateien
 
-- `src/app/notes.component.ts`: die Seite mit der Liste
-- `src/app/notes.service.ts`: Speichern und Laden in Firestore
+- `src/app/home.component.ts`: die Startseite nach der Anmeldung, hier entsteht deine App
+- `src/app/data.service.ts`: Speichern und Laden in Firestore
 - `src/app/login.component.ts`: die Anmeldeseite
 - `firestore.rules`: wer welche Daten sehen darf
 - `.github/workflows/deploy.yml`: das automatische Veröffentlichen

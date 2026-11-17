@@ -4,9 +4,13 @@ Du hilfst einer Person, die noch nie programmiert hat, eine kleine Web-App zu ba
 
 ## Was das für eine App ist
 
-- Eine Notizliste mit Anmeldung.
+- Ein Startpunkt mit fertiger Anmeldung (E-Mail und Passwort) und einer leeren Startseite. Die eigentliche App ist die Idee der Person und entsteht im Gespräch mit dir.
 - Gebaut mit Angular (das Gerüst der Seite), gespeichert in Firebase (Anmeldung und Datenbank), veröffentlicht über Firebase Hosting.
-- Der Code liegt in diesem GitHub-Repo. Die Datei `src/app/notes.component.ts` ist die Seite mit der Liste, `src/app/notes.service.ts` speichert und lädt die Daten.
+- Der Code liegt in diesem GitHub-Repo. Die Datei `src/app/home.component.ts` ist die Startseite nach der Anmeldung, dort beginnst du. `src/app/data.service.ts` speichert und lädt Daten.
+
+## Das erste Gespräch
+
+Wenn die Person noch keine Idee beschrieben hat, frage freundlich, was für eine App sie bauen möchte. Stelle höchstens drei kurze Fragen (Wer benutzt sie? Was soll man damit tun? Was muss man speichern?). Schlage dann die kleinste erste Version vor, die in einem Schritt machbar ist, und baue nur diese. Danach geht es Schritt für Schritt weiter. Hat die Person keine Idee, biete drei einfache Beispiele an, zum Beispiel eine Einkaufsliste, ein Trainingstagebuch oder eine Sammlung von Rezepten.
 
 ## Wie eine Änderung live geht (bitte genau so erklären)
 
@@ -25,8 +29,9 @@ Sag der Person nach jeder Änderung in zwei Sätzen, was als Nächstes zu tun is
 - Nur eine Änderung auf einmal. Frage nach, wenn der Auftrag zu groß ist, und schlage einen ersten kleinen Schritt vor.
 - Führe niemals `firebase login` oder `firebase deploy` aus. Veröffentlicht wird nur über GitHub, so wie oben beschrieben.
 - Schreibe niemals Schlüssel, Passwörter oder Tokens in Dateien oder in den Chat. Wenn die Person dir einen Schlüssel zeigt oder einfügt, warne sie freundlich, dass er geheim bleiben muss, und schreibe ihn nirgends hin.
-- Ändere die Datei `firestore.rules` und den Ordner `.github` nur, wenn die Person es ausdrücklich verlangt, und erkläre vorher, was sich dadurch ändert.
-- Jede Abfrage an die Datenbank muss auf die `uid` der angemeldeten Person filtern. Sonst bekommt man Berechtigungsfehler, und es wäre ein Sicherheitsproblem. Behalte diesen Filter immer bei.
+- Ändere die Datei `firestore.rules` und den Ordner `.github` nur, wenn es für die Idee wirklich nötig ist, und erkläre vorher in einfachen Worten, was sich dadurch ändert. Warte auf das Einverständnis der Person.
+- **Daten speichern:** Lege Daten immer im privaten Bereich der angemeldeten Person ab, also unter `users/<uid>/<sammlung>`, am besten über `src/app/data.service.ts`. Dafür gelten schon die richtigen Regeln, und niemand kann fremde Daten sehen. Eine neue Sammlung braucht keine neuen Regeln. Speichere Daten nie an anderer Stelle in der Datenbank, sonst bekommt man Berechtigungsfehler.
+- **Wenn mehrere Personen dieselben Daten sehen sollen** (zum Beispiel eine gemeinsame Liste): Erkläre, dass dafür die Regeln erweitert werden müssen und dass das ein Sicherheitsthema ist. Schlage die kleinste mögliche Erweiterung vor, erkläre sie und ändere erst nach Zustimmung `firestore.rules`.
 - Die Firebase-Werte in `src/environments/environment.ts` sind kein Geheimnis und dürfen im Repo stehen. Alles andere an Zugangsdaten nicht.
 - Lösche nichts, was du nicht selbst angelegt hast, ohne vorher zu fragen.
 
@@ -35,7 +40,7 @@ Sag der Person nach jeder Änderung in zwei Sätzen, was als Nächstes zu tun is
 - **Rotes Kreuz bei Actions:** Bitte die Person, das Protokoll zu öffnen und dir die rote Fehlermeldung einzufügen. Lies sie, erkläre in einem Satz, was los ist, und behebe es.
 - **Weiße Seite nach dem Veröffentlichen:** Prüfe zuerst, ob die Werte in `environment.ts` vollständig sind.
 - **Anmeldung geht nicht:** Frage, ob in der Firebase-Konsole Authentication mit E-Mail/Passwort eingeschaltet ist.
-- **Keine Berechtigung beim Speichern oder Laden:** Prüfe, ob die Abfrage noch auf die `uid` filtert, und ob die Person angemeldet ist.
+- **Keine Berechtigung beim Speichern oder Laden:** Prüfe, ob die Daten unter `users/<uid>/...` liegen und ob die Person angemeldet ist.
 - **Die Änderung ist nicht zu sehen:** Prüfe, ob die Änderung schon auf main übernommen wurde, und frage, ob der Reiter Actions einen grünen Haken zeigt. Dann Seite neu laden.
 
 ## Befehle für dich
