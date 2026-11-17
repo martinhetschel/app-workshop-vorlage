@@ -13,11 +13,12 @@ Ein Startpunkt mit Anmeldung für deine eigene App-Idee. Gebaut mit Angular, ges
 
 1. In der [Firebase-Konsole](https://console.firebase.google.com) ein neues Projekt anlegen (Google Analytics ausschalten) und die **Projekt-ID** notieren.
 2. Dort unter Authentication die Anmeldemethode E-Mail/Passwort einschalten.
-3. Die [Google Cloud Shell](https://shell.cloud.google.com) öffnen (Terminal im Browser) und diese zwei Zeilen einfügen:
+3. Die [Google Cloud Shell](https://shell.cloud.google.com) öffnen (Terminal im Browser) und diese drei Zeilen einfügen:
 
    ```bash
-   curl -fsSL https://raw.githubusercontent.com/martinhetschel/app-workshop-vorlage/main/scripts/setup-wif.sh -o setup.sh
-   bash setup.sh
+   git clone https://github.com/martinhetschel/app-workshop-vorlage
+   cd app-workshop-vorlage
+   bash scripts/setup-wif.sh
    ```
 
 4. Das Skript fragt nach der Projekt-ID und nach deinem GitHub-Repo (`name/repo`). Es richtet die schlüssellose Anmeldung für den Deploy ein, legt Hosting und die Datenbank (Europa) an, holt die Firebase-Werte und trägt alles in dein Repo ein. Am Ende läuft der erste Deploy.

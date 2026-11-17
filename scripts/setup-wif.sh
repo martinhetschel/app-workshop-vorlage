@@ -5,8 +5,9 @@
 # die Werte in dein GitHub-Repo ein. Es lässt sich beliebig oft starten: Was schon da
 # ist, bleibt, was fehlt oder falsch ist, wird ergänzt oder korrigiert.
 #
-#   curl -fsSL https://raw.githubusercontent.com/martinhetschel/app-workshop-vorlage/main/scripts/setup-wif.sh -o setup.sh
-#   bash setup.sh
+#   git clone https://github.com/martinhetschel/app-workshop-vorlage
+#   cd app-workshop-vorlage
+#   bash scripts/setup-wif.sh
 #
 # Optional mit Angaben: bash setup.sh PROJEKT-ID NAME/REPO
 #
