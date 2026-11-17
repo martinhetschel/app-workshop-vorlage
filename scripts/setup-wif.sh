@@ -9,7 +9,7 @@
 #   cd app-workshop-vorlage
 #   bash scripts/setup-wif.sh
 #
-# Optional mit Angaben: bash setup.sh PROJEKT-ID NAME/REPO
+# Optional mit Angaben: bash scripts/setup-wif.sh PROJEKT-ID NAME/REPO
 #
 # Es wird kein Schlüssel erzeugt. Der Deploy meldet sich per Workload Identity Federation
 # an: GitHub beweist bei jedem Lauf kurzzeitig, aus welchem Repo er kommt.
