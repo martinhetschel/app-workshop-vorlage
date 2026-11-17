@@ -11,14 +11,21 @@ Ein Startpunkt mit Anmeldung für deine eigene App-Idee. Gebaut mit Angular, ges
 
 ## Einmalig einrichten
 
-1. In der Firebase-Konsole eine Web-App registrieren und die Werte kopieren.
-2. Authentication (E-Mail/Passwort) und Firestore (Standort eur3, Produktionsmodus) einschalten.
-3. Die Werte in `src/environments/environment.ts` eintragen lassen. Sag der KI: "Trage diese Firebase-Werte in environment.ts ein" und füge die Werte ein.
-4. In der Google Cloud Shell den Einrichtungsblock aus dem Workshop ausführen. Er gibt zwei Werte aus (Provider und Dienstkonto). Es wird kein Schlüssel erzeugt.
-5. In `.github/workflows/deploy.yml` und in `.firebaserc` DEIN-PROJEKT durch deine Projekt-ID ersetzen und die zwei Werte aus Schritt 4 sowie die Projektnummer eintragen.
-6. In der Firebase-Konsole unter Authentication, Einstellungen, Autorisierte Domains prüfen, dass `DEIN-PROJEKT.web.app` eingetragen ist.
+1. In der [Firebase-Konsole](https://console.firebase.google.com) ein neues Projekt anlegen (Google Analytics ausschalten) und die **Projekt-ID** notieren.
+2. Dort unter Authentication die Anmeldemethode E-Mail/Passwort einschalten.
+3. Die [Google Cloud Shell](https://shell.cloud.google.com) öffnen (Terminal im Browser) und diese zwei Zeilen einfügen:
 
-Die Firestore-Regeln aus `firestore.rules` werden bei jedem Deploy automatisch veröffentlicht.
+   ```bash
+   curl -fsSL https://raw.githubusercontent.com/martinhetschel/app-workshop-vorlage/main/scripts/setup-wif.sh -o setup.sh
+   bash setup.sh
+   ```
+
+4. Das Skript fragt nach der Projekt-ID und nach deinem GitHub-Repo (`name/repo`). Es richtet die schlüssellose Anmeldung für den Deploy ein, legt Hosting und die Datenbank (Europa) an, holt die Firebase-Werte und trägt alles in dein Repo ein. Am Ende läuft der erste Deploy.
+5. Das Skript kannst du beliebig oft starten, zum Beispiel nach einem Tippfehler. Es korrigiert, was nicht stimmt, und lässt den Rest in Ruhe.
+
+Die Firestore-Regeln aus `firestore.rules` werden bei jedem Deploy automatisch veröffentlicht. Es wird kein Schlüssel erzeugt.
+
+Zeigt die App nach dem Deploy eine Anmeldefehlermeldung, prüfe in der Firebase-Konsole unter Authentication, Einstellungen, Autorisierte Domains, ob `DEIN-PROJEKT.web.app` (mit deiner Projekt-ID) eingetragen ist.
 
 ## Den Code ändern lassen
 
@@ -37,3 +44,4 @@ Erzähle der KI deine Idee, zum Beispiel: "Ich möchte eine Einkaufsliste, in de
 - `src/app/login.component.ts`: die Anmeldeseite
 - `firestore.rules`: wer welche Daten sehen darf
 - `.github/workflows/deploy.yml`: das automatische Veröffentlichen
+- `scripts/setup-wif.sh`: die einmalige Einrichtung für die Cloud Shell
