@@ -2,6 +2,18 @@
 
 Wenn du der KI genau sagen kannst, was du willst, bekommst du genau das. Hier stehen die Wörter für die Bausteine, die in fast jeder App vorkommen. Die Fachwörter sind englisch, weil sie überall so benutzt werden. Wenn du sie benutzt, versteht dich die KI sofort.
 
+## Auf einen Blick: So sehen die Bausteine aus
+
+Die vier Bilder zeigen die wichtigsten Bausteine. Unten steht zu jedem, wofür er gut ist. Dieselben Beispiele gibt es als Seite zum Anklicken und Ausprobieren: die Datei [ui-beispiele.html](ui-beispiele.html) herunterladen und im Browser öffnen.
+
+![Navigation: Hamburgermenü, Tabs, untere Leiste, Brotkrumen, Seitenleiste](bilder/ui-1.png)
+
+![Eingaben: Button, Eingabefeld, Dropdown, Checkbox, Radiobuttons, Schalter, Datum, Suche, Slider](bilder/ui-2.png)
+
+![Hinweise und Fenster: Modalfenster, Toast, Banner, Tooltip, Ladeanzeige, Leerzustand, Fehlermeldung](bilder/ui-3.png)
+
+![Inhalte: Card, Badge, Akkordeon, Floating Action Button, Tabelle am PC, Cards am Handy](bilder/ui-4.png)
+
 ## Navigation: Wie komme ich wohin?
 
 - **Menü:** Eine Liste von Zielen, zum Beispiel "Start", "Einträge", "Einstellungen".

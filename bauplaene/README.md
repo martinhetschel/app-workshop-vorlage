@@ -9,7 +9,7 @@ Die Baupläne sind **optional**. Deine App funktioniert auch ohne sie.
 | [pwa.md](pwa.md) | Deine App lässt sich wie eine echte App auf den Startbildschirm legen | leicht | keine |
 | [qr-scanner.md](qr-scanner.md) | Deine App liest QR-Codes mit der Handykamera | mittel | keine |
 | [mcp.md](mcp.md) | Claude kann die Daten deiner App lesen (nur lesen) | schwer | braucht den Blaze-Tarif von Firebase |
-| [ui-woerterbuch.md](ui-woerterbuch.md) | Die Fachwörter für Knöpfe, Menüs und Fenster, damit du der KI genau sagen kannst, was du willst | leicht | keine |
+| [ui-woerterbuch.md](ui-woerterbuch.md) | Die Fachwörter für Knöpfe, Menüs und Fenster, mit Bildern, damit du der KI genau sagen kannst, was du willst | leicht | keine |
 | [vor-dem-teilen.md](vor-dem-teilen.md) | Checkliste, bevor andere deine App benutzen | leicht | keine |
 
 ## So benutzt du einen Bauplan
