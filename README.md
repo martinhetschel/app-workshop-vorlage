@@ -32,6 +32,18 @@ Zeigt die App nach dem Deploy eine Anmeldefehlermeldung, prüfe in der Firebase-
 
 Erzähle der KI deine Idee, zum Beispiel: "Ich möchte eine Einkaufsliste, in der ich Dinge mit Menge eintragen und abhaken kann." Die KI stellt dir ein paar Fragen und baut zuerst die kleinste Version. Danach geht es Schritt für Schritt weiter, immer nur eine Änderung auf einmal. Fehlermeldungen komplett kopieren und der KI zeigen.
 
+## Optionale Baupläne
+
+Im Ordner [bauplaene](bauplaene/README.md) liegen Anleitungen für die KI, mit denen du deine App erweitern kannst:
+
+- **App fürs Handy** ([pwa.md](bauplaene/pwa.md)): Symbol auf dem Startbildschirm, öffnet sich wie eine echte App.
+- **QR-Code lesen** ([qr-scanner.md](bauplaene/qr-scanner.md)): Die Handykamera liest QR-Codes.
+- **Claude liest deine Daten** ([mcp.md](bauplaene/mcp.md)): für Fortgeschrittene, braucht den Blaze-Tarif.
+- **Wörterbuch** ([ui-woerterbuch.md](bauplaene/ui-woerterbuch.md)): Wie heißen Hamburgermenü, Dropdown, Checkbox und Modalfenster, und wie sehen Listen am PC (Tabelle) und am Handy (Cards) aus?
+- **Vor dem Teilen** ([vor-dem-teilen.md](bauplaene/vor-dem-teilen.md)): Datenschutz, Impressum und mehr, bevor andere deine App benutzen.
+
+Sag der KI zum Beispiel: "Baue die PWA nach bauplaene/pwa.md ein."
+
 ## Regeln für die KI
 
 - Niemals `firebase login` oder `firebase deploy` ausführen. Veröffentlicht wird nur über GitHub Actions.
@@ -45,4 +57,5 @@ Erzähle der KI deine Idee, zum Beispiel: "Ich möchte eine Einkaufsliste, in de
 - `src/app/login.component.ts`: die Anmeldeseite
 - `firestore.rules`: wer welche Daten sehen darf
 - `.github/workflows/deploy.yml`: das automatische Veröffentlichen
+- `bauplaene/`: optionale Anleitungen für die KI
 - `scripts/setup-wif.sh`: die einmalige Einrichtung für die Cloud Shell

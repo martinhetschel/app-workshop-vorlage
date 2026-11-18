@@ -41,3 +41,28 @@ li span { flex: 1; }
 li.done span { text-decoration: line-through; color: #9ca3af; }
 li.empty { color: #9ca3af; }
 .error { color: #dc2626; }
+
+/*
+ * Listen mit mehreren Angaben: am großen Bildschirm eine Tabelle, am Handy (schmaler als 900 Pixel) Cards.
+ * Benutzung: <table class="responsive"> mit data-label="Spaltenname" an jeder Zelle. Die erste Zelle ist der Titel der Card.
+ */
+table.responsive { width: 100%; border-collapse: collapse; }
+table.responsive th,
+table.responsive td { text-align: left; padding: 0.6rem 0.5rem; border-bottom: 1px solid #e5e7eb; }
+table.responsive th { font-size: 0.9rem; color: #6b7280; }
+
+@media (max-width: 899px) {
+  table.responsive,
+  table.responsive tbody,
+  table.responsive tr,
+  table.responsive td { display: block; width: 100%; }
+  table.responsive thead { display: none; }
+  table.responsive tr { margin: 0 0 0.75rem; padding: 0.6rem 0.9rem; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; }
+  table.responsive td { display: flex; gap: 0.6rem; padding: 0.3rem 0; border: 0; }
+  table.responsive td::before { content: attr(data-label); min-width: 6.5rem; font-weight: 600; color: #6b7280; }
+  table.responsive td:first-child { font-size: 1.1rem; font-weight: 700; }
+  table.responsive td:first-child::before { content: none; }
+}
+
+/* Breitere Karte für Seiten mit einer Tabelle: <main class="card wide"> */
+.card.wide { max-width: 1100px; }

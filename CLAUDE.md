@@ -35,6 +35,23 @@ Sag der Person nach jeder Änderung in zwei Sätzen, was als Nächstes zu tun is
 - Die Firebase-Werte in `src/environments/environment.ts` sind kein Geheimnis und dürfen im Repo stehen. Alles andere an Zugangsdaten nicht.
 - Lösche nichts, was du nicht selbst angelegt hast, ohne vorher zu fragen.
 
+## Aussehen: Listen, Handy und PC
+
+- Die App wird **zuerst fürs Handy** gebaut und muss auch auf einem großen PC-Bildschirm gut aussehen.
+- **Listen mit mehreren Angaben je Eintrag** (zum Beispiel Name, Ort, Telefon, Status) zeigst du am großen Bildschirm (ab 900 Pixel Breite) als **Tabelle** und auf dem Handy als **Cards**. Das ist **eine** Tabelle mit `<table class="responsive">` und `data-label="Spaltenname"` an jeder Zelle, die Styles dafür stehen schon in `src/styles.css`. Die erste Zelle ist der Titel der Card. Seiten mit Tabelle bekommen `class="card wide"`. Eine Liste mit nur einer Angabe je Eintrag (zum Beispiel eine Einkaufsliste) bleibt eine einfache Liste.
+- Benutze die Fachwörter aus `bauplaene/ui-woerterbuch.md` (Hamburgermenü, Dropdown, Checkbox, Modalfenster und so weiter) und erkläre ein Wort einmal in einem Satz, wenn die Person es zum ersten Mal hört. Zu jeder App gehören Ladeanzeige, Leerzustand ("Noch keine Einträge") und verständliche Fehlermeldungen. Löschen fragt vorher nach.
+
+## Baupläne (nur auf Wunsch der Person)
+
+Im Ordner `bauplaene/` liegen optionale Anleitungen: `pwa.md` (App aufs Handy legen), `qr-scanner.md` (QR-Codes mit der Kamera lesen), `mcp.md` (Claude darf die Daten der App lesen), `ui-woerterbuch.md` und `vor-dem-teilen.md`.
+
+- Baue einen Bauplan **nur ein**, wenn die Person danach fragt oder zustimmt. Schlage ihn höchstens einmal kurz vor, wenn er zur Idee passt (zum Beispiel QR-Scanner bei einer Inventur-App).
+- Erkläre vorher in einfachen Worten, was sich ändert und wozu es gut ist. Ein Bauplan ist **eine** Änderung: danach erst testen lassen, dann auf main übernehmen.
+- Der Bauplan `mcp.md` braucht den Blaze-Tarif von Firebase (Zahlungsmethode) und Schritte in der Google Cloud Shell, die nur die Person selbst ausführen kann. Sag das vorher deutlich, erkläre das Budget mit Warnung, und ändere `.github` erst mit Einverständnis. Das Passwort (Token) schreibst du nie in eine Datei oder in den Chat. Der MCP-Zugang darf nur **lesen**.
+- Beim Bauplan `qr-scanner.md` öffnest du gelesene Links nie automatisch und speicherst nur, was die App erwartet.
+- Beim Bauplan `pwa.md` kommen nie Daten in den Zwischenspeicher (`ngsw-config.json` ohne `dataGroups`), und das Paket `@angular/service-worker` hat exakt dieselbe Version wie `@angular/core`.
+- Wenn die Person die App anderen zeigen will oder fremde Daten speichert (Kundenkartei und Ähnliches), weise einmal auf `bauplaene/vor-dem-teilen.md` hin (Datenschutz, Impressum, wer sich anmelden darf).
+
 ## Wenn etwas nicht klappt
 
 - **Rotes Kreuz bei Actions:** Bitte die Person, das Protokoll zu öffnen und dir die rote Fehlermeldung einzufügen. Lies sie, erkläre in einem Satz, was los ist, und behebe es.
