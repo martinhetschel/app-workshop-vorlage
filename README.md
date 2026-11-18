@@ -38,6 +38,7 @@ Im Ordner [bauplaene](bauplaene/README.md) liegen Anleitungen für die KI, mit d
 
 - **App fürs Handy** ([pwa.md](bauplaene/pwa.md)): Symbol auf dem Startbildschirm, öffnet sich wie eine echte App.
 - **QR-Code lesen** ([qr-scanner.md](bauplaene/qr-scanner.md)): Die Handykamera liest QR-Codes.
+- **Nur mein Team** ([team.md](bauplaene/team.md)): Nur Personen auf deiner Liste kommen in die App.
 - **Claude liest deine Daten** ([mcp.md](bauplaene/mcp.md)): für Fortgeschrittene, braucht den Blaze-Tarif.
 - **Wörterbuch** ([ui-woerterbuch.md](bauplaene/ui-woerterbuch.md)): Wie heißen Hamburgermenü, Dropdown, Checkbox und Modalfenster, und wie sehen Listen am PC (Tabelle) und am Handy (Cards) aus?
 - **Vor dem Teilen** ([vor-dem-teilen.md](bauplaene/vor-dem-teilen.md)): Datenschutz, Impressum und mehr, bevor andere deine App benutzen.

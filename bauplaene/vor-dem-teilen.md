@@ -17,7 +17,7 @@ Läuft die App öffentlich oder für Außenstehende (nicht nur für dich privat)
 
 ## 3. Wer darf sich anmelden?
 
-In der Vorlage kann sich **jede Person mit einer E-Mail-Adresse registrieren**. Sie sieht nur ihre eigenen Daten, aber sie kann die App benutzen. Soll die App nur für bestimmte Personen sein (zum Beispiel dein Team), muss die Registrierung eingeschränkt werden. Das ist ein Sicherheitsthema: Sag der KI, was du willst, sie erklärt dir die Möglichkeiten, und ändert erst nach deinem Einverständnis etwas.
+In der Vorlage kann sich **jede Person mit einer E-Mail-Adresse registrieren**. Sie sieht nur ihre eigenen Daten, aber sie kann die App benutzen. Soll die App nur für bestimmte Personen sein (zum Beispiel dein Team), muss der Zugang eingeschränkt werden. Dafür gibt es den Bauplan [team.md](team.md): Nur Personen auf deiner Liste, die ihre E-Mail bestätigt haben, kommen hinein. Das ist ein Sicherheitsthema: Die KI erklärt dir vorher, was sich ändert, und ändert erst nach deinem Einverständnis etwas.
 
 ## 4. Sicherung und Export
 

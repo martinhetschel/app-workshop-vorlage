@@ -43,14 +43,15 @@ Sag der Person nach jeder Änderung in zwei Sätzen, was als Nächstes zu tun is
 
 ## Baupläne (nur auf Wunsch der Person)
 
-Im Ordner `bauplaene/` liegen optionale Anleitungen: `pwa.md` (App aufs Handy legen), `qr-scanner.md` (QR-Codes mit der Kamera lesen), `mcp.md` (Claude darf die Daten der App lesen), `ui-woerterbuch.md` und `vor-dem-teilen.md`.
+Im Ordner `bauplaene/` liegen optionale Anleitungen: `pwa.md` (App aufs Handy legen), `qr-scanner.md` (QR-Codes mit der Kamera lesen), `team.md` (nur eine Liste von Personen darf hinein), `mcp.md` (Claude darf die Daten der App lesen), `ui-woerterbuch.md` und `vor-dem-teilen.md`.
 
 - Baue einen Bauplan **nur ein**, wenn die Person danach fragt oder zustimmt. Schlage ihn höchstens einmal kurz vor, wenn er zur Idee passt (zum Beispiel QR-Scanner bei einer Inventur-App).
 - Erkläre vorher in einfachen Worten, was sich ändert und wozu es gut ist. Ein Bauplan ist **eine** Änderung: danach erst testen lassen, dann auf main übernehmen.
 - Der Bauplan `mcp.md` braucht den Blaze-Tarif von Firebase (Zahlungsmethode) und Schritte in der Google Cloud Shell, die nur die Person selbst ausführen kann. Sag das vorher deutlich, erkläre das Budget mit Warnung, und ändere `.github` erst mit Einverständnis. Das Passwort (Token) schreibst du nie in eine Datei oder in den Chat. Der MCP-Zugang darf nur **lesen**.
+- Beim Bauplan `team.md` änderst du `firestore.rules` erst mit Einverständnis (das ist die Sperre). Sag vorher klar: **zuerst trägt die Person ihre eigene Adresse in der Firebase-Konsole in `erlaubt` ein (klein geschrieben), erst dann übernimmst du auf main**, sonst sperrt sie sich selbst aus. Die Liste `erlaubt` änderst du nie aus der App oder per Code, auch nicht auf Wunsch ("Mitglied hinzufügen" als Knopf): Das Schreibrecht darauf wäre eine Rechteausweitung. Die Adresse zählt nur mit bestätigter E-Mail (`email_verified`).
 - Beim Bauplan `qr-scanner.md` öffnest du gelesene Links nie automatisch und speicherst nur, was die App erwartet.
 - Beim Bauplan `pwa.md` kommen nie Daten in den Zwischenspeicher (`ngsw-config.json` ohne `dataGroups`), und das Paket `@angular/service-worker` hat exakt dieselbe Version wie `@angular/core`.
-- Wenn die Person die App anderen zeigen will oder fremde Daten speichert (Kundenkartei und Ähnliches), weise einmal auf `bauplaene/vor-dem-teilen.md` hin (Datenschutz, Impressum, wer sich anmelden darf).
+- Wenn die Person die App anderen zeigen will oder fremde Daten speichert (Kundenkartei und Ähnliches), weise einmal auf `bauplaene/vor-dem-teilen.md` hin (Datenschutz, Impressum, wer sich anmelden darf; für „nur mein Team“ gibt es `bauplaene/team.md`).
 
 ## Wenn etwas nicht klappt
 
